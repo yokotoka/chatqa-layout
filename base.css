@@ -1,0 +1,2153 @@
+@charset "UTF-8";
+
+
+:root {
+    --yoko-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --yoko-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--yoko-font-family-emoji);
+    --yoko-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--yoko-font-family-emoji);
+    --yoko-font-family: var(--yoko-font-family-sans-serif);
+    --yoko-line-height: 1.5;
+    --yoko-font-weight: 400;
+    --yoko-font-size: 100%;
+    --yoko-text-underline-offset: 0.1rem;
+    --yoko-border-radius: 0.25rem;
+    --yoko-border-width: 0.0625rem;
+    --yoko-outline-width: 0.125rem;
+    --yoko-transition: 0.2s ease-in-out;
+    --yoko-spacing: 1rem;
+    --yoko-typography-spacing-vertical: 1rem;
+    --yoko-block-spacing-vertical: var(--yoko-spacing);
+    --yoko-block-spacing-horizontal: var(--yoko-spacing);
+    --yoko-form-element-spacing-vertical: 0.75rem;
+    --yoko-form-element-spacing-horizontal: 1rem;
+    --yoko-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --yoko-group-box-shadow-focus-with-button: 0 0 0 var(--yoko-outline-width) var(--yoko-primary-focus);
+    --yoko-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--yoko-form-element-border-color);
+    --yoko-modal-overlay-backdrop-filter: blur(0.375rem);
+    --yoko-nav-element-spacing-vertical: 1rem;
+    --yoko-nav-element-spacing-horizontal: 0.5rem;
+    --yoko-nav-link-spacing-vertical: 0.5rem;
+    --yoko-nav-link-spacing-horizontal: 0.5rem;
+    --yoko-nav-breadcrumb-divider: ">";
+    --yoko-icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --yoko-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+    --yoko-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --yoko-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+    --yoko-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+    --yoko-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    --yoko-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+    --yoko-icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgb(136, 145, 164)' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E")
+}
+
+@media (min-width: 576px) {
+    :root {
+        --yoko-font-size: 106.25%
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --yoko-font-size: 112.5%
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --yoko-font-size: 118.75%
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --yoko-font-size: 125%
+    }
+}
+
+@media (min-width: 1536px) {
+    :root {
+        --yoko-font-size: 131.25%
+    }
+}
+
+a {
+    --yoko-text-decoration: underline
+}
+
+small {
+    --yoko-font-size: 0.875em
+}
+
+h1, h2, h3, h4, h5, h6 {
+    --yoko-font-weight: 700
+}
+
+h1 {
+    --yoko-font-size: 2rem;
+    --yoko-line-height: 1.125;
+    --yoko-typography-spacing-top: 3rem
+}
+
+h2 {
+    --yoko-font-size: 1.75rem;
+    --yoko-line-height: 1.15;
+    --yoko-typography-spacing-top: 2.625rem
+}
+
+h3 {
+    --yoko-font-size: 1.5rem;
+    --yoko-line-height: 1.175;
+    --yoko-typography-spacing-top: 2.25rem
+}
+
+h4 {
+    --yoko-font-size: 1.25rem;
+    --yoko-line-height: 1.2;
+    --yoko-typography-spacing-top: 1.874rem
+}
+
+h5 {
+    --yoko-font-size: 1.125rem;
+    --yoko-line-height: 1.225;
+    --yoko-typography-spacing-top: 1.6875rem
+}
+
+h6 {
+    --yoko-font-size: 1rem;
+    --yoko-line-height: 1.25;
+    --yoko-typography-spacing-top: 1.5rem
+}
+
+tfoot td, tfoot th, thead td, thead th {
+    --yoko-font-weight: 600;
+    --yoko-border-width: 0.1875rem
+}
+
+code, kbd, pre, samp {
+    --yoko-font-family: var(--yoko-font-family-monospace)
+}
+
+kbd {
+    --yoko-font-weight: bolder
+}
+
+:where(select,textarea), input:not([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[type=file]) {
+    --yoko-outline-width: 0.0625rem
+}
+
+[type=search] {
+    --yoko-border-radius: 5rem
+}
+
+[type=checkbox], [type=radio] {
+    --yoko-border-width: 0.125rem
+}
+
+[type=checkbox][role=switch] {
+    --yoko-border-width: 0.1875rem
+}
+
+[role=search] {
+    --yoko-border-radius: 5rem
+}
+
+[role=group] [role=button], [role=group] [type=button], [role=group] [type=submit], [role=group] button, [role=search] [role=button], [role=search] [type=button], [role=search] [type=submit], [role=search] button {
+    --yoko-form-element-spacing-horizontal: 2rem
+}
+
+details summary[role=button]::after {
+    filter: brightness(0) invert(1)
+}
+
+[aria-busy=true]:not(input,select,textarea):is(button,[type=submit],[type=button],[type=reset],[role=button])::before {
+    filter: brightness(0) invert(0)
+}
+
+:root:not([data-theme=dark]), [data-theme=light] {
+    --yoko-background-color: #fff;
+    --yoko-color: #373c44;
+    --yoko-text-selection-color: rgba(183, 136, 0, 0.25);
+    --yoko-muted-color: #646b79;
+    --yoko-muted-border-color: #e7eaf0;
+    --yoko-primary: #876400;
+    --yoko-primary-background: #ffbf00;
+    --yoko-primary-border: var(--yoko-primary-background);
+    --yoko-primary-underline: rgba(135, 100, 0, 0.5);
+    --yoko-primary-hover: #694d00;
+    --yoko-primary-hover-background: #e8ae01;
+    --yoko-primary-hover-border: var(--yoko-primary-hover-background);
+    --yoko-primary-hover-underline: var(--yoko-primary-hover);
+    --yoko-primary-focus: rgba(183, 136, 0, 0.5);
+    --yoko-primary-inverse: #000;
+    --yoko-secondary: #5d6b89;
+    --yoko-secondary-background: #525f7a;
+    --yoko-secondary-border: var(--yoko-secondary-background);
+    --yoko-secondary-underline: rgba(93, 107, 137, 0.5);
+    --yoko-secondary-hover: #48536b;
+    --yoko-secondary-hover-background: #48536b;
+    --yoko-secondary-hover-border: var(--yoko-secondary-hover-background);
+    --yoko-secondary-hover-underline: var(--yoko-secondary-hover);
+    --yoko-secondary-focus: rgba(93, 107, 137, 0.25);
+    --yoko-secondary-inverse: #fff;
+    --yoko-contrast: #181c25;
+    --yoko-contrast-background: #181c25;
+    --yoko-contrast-border: var(--yoko-contrast-background);
+    --yoko-contrast-underline: rgba(24, 28, 37, 0.5);
+    --yoko-contrast-hover: #000;
+    --yoko-contrast-hover-background: #000;
+    --yoko-contrast-hover-border: var(--yoko-contrast-hover-background);
+    --yoko-contrast-hover-underline: var(--yoko-secondary-hover);
+    --yoko-contrast-focus: rgba(93, 107, 137, 0.25);
+    --yoko-contrast-inverse: #fff;
+    --yoko-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+    --yoko-h1-color: #2d3138;
+    --yoko-h2-color: #373c44;
+    --yoko-h3-color: #424751;
+    --yoko-h4-color: #4d535e;
+    --yoko-h5-color: #5c6370;
+    --yoko-h6-color: #646b79;
+    --yoko-mark-background-color: #fde7c0;
+    --yoko-mark-color: #0f1114;
+    --yoko-ins-color: #1d6a54;
+    --yoko-del-color: #883935;
+    --yoko-blockquote-border-color: var(--yoko-muted-border-color);
+    --yoko-blockquote-footer-color: var(--yoko-muted-color);
+    --yoko-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --yoko-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --yoko-table-border-color: var(--yoko-muted-border-color);
+    --yoko-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+    --yoko-code-background-color: #f3f5f7;
+    --yoko-code-color: #646b79;
+    --yoko-code-kbd-background-color: var(--yoko-color);
+    --yoko-code-kbd-color: var(--yoko-background-color);
+    --yoko-form-element-background-color: #fbfcfc;
+    --yoko-form-element-selected-background-color: #dfe3eb;
+    --yoko-form-element-border-color: #cfd5e2;
+    --yoko-form-element-color: #23262c;
+    --yoko-form-element-placeholder-color: var(--yoko-muted-color);
+    --yoko-form-element-active-background-color: #fff;
+    --yoko-form-element-active-border-color: var(--yoko-primary-border);
+    --yoko-form-element-focus-color: var(--yoko-primary-border);
+    --yoko-form-element-disabled-opacity: 0.5;
+    --yoko-form-element-invalid-border-color: #b86a6b;
+    --yoko-form-element-invalid-active-border-color: #c84f48;
+    --yoko-form-element-invalid-focus-color: var(--yoko-form-element-invalid-active-border-color);
+    --yoko-form-element-valid-border-color: #4c9b8a;
+    --yoko-form-element-valid-active-border-color: #279977;
+    --yoko-form-element-valid-focus-color: var(--yoko-form-element-valid-active-border-color);
+    --yoko-switch-background-color: #bfc7d9;
+    --yoko-switch-checked-background-color: var(--yoko-primary-background);
+    --yoko-switch-color: #fff;
+    --yoko-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    --yoko-range-border-color: #dfe3eb;
+    --yoko-range-active-border-color: #bfc7d9;
+    --yoko-range-thumb-border-color: var(--yoko-background-color);
+    --yoko-range-thumb-color: var(--yoko-secondary-background);
+    --yoko-range-thumb-active-color: var(--yoko-primary-background);
+    --yoko-accordion-border-color: var(--yoko-muted-border-color);
+    --yoko-accordion-active-summary-color: var(--yoko-primary-hover);
+    --yoko-accordion-close-summary-color: var(--yoko-color);
+    --yoko-accordion-open-summary-color: var(--yoko-muted-color);
+    --yoko-card-background-color: var(--yoko-background-color);
+    --yoko-card-border-color: var(--yoko-muted-border-color);
+    --yoko-card-box-shadow: var(--yoko-box-shadow);
+    --yoko-card-sectioning-background-color: #fbfcfc;
+    --yoko-loading-spinner-opacity: 0.5;
+    --yoko-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
+    --yoko-progress-background-color: #dfe3eb;
+    --yoko-progress-color: var(--yoko-primary-background);
+    --yoko-tooltip-background-color: var(--yoko-contrast-background);
+    --yoko-tooltip-color: var(--yoko-contrast-inverse);
+    --yoko-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 155, 138)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --yoko-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200, 79, 72)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    color-scheme: light
+}
+
+:root:not([data-theme=dark]) input:is([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[type=file]), [data-theme=light] input:is([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[type=file]) {
+    --yoko-form-element-focus-color: var(--yoko-primary-focus)
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --yoko-background-color: #13171f;
+        --yoko-color: #c2c7d0;
+        --yoko-text-selection-color: rgba(199, 148, 0, 0.1875);
+        --yoko-muted-color: #7b8495;
+        --yoko-muted-border-color: #202632;
+        --yoko-primary: #c79400;
+        --yoko-primary-background: #ffbf00;
+        --yoko-primary-border: var(--yoko-primary-background);
+        --yoko-primary-underline: rgba(199, 148, 0, 0.5);
+        --yoko-primary-hover: #e8ae01;
+        --yoko-primary-hover-background: #fecc63;
+        --yoko-primary-hover-border: var(--yoko-primary-hover-background);
+        --yoko-primary-hover-underline: var(--yoko-primary-hover);
+        --yoko-primary-focus: rgba(199, 148, 0, 0.375);
+        --yoko-primary-inverse: #000;
+        --yoko-secondary: #969eaf;
+        --yoko-secondary-background: #525f7a;
+        --yoko-secondary-border: var(--yoko-secondary-background);
+        --yoko-secondary-underline: rgba(150, 158, 175, 0.5);
+        --yoko-secondary-hover: #b3b9c5;
+        --yoko-secondary-hover-background: #5d6b89;
+        --yoko-secondary-hover-border: var(--yoko-secondary-hover-background);
+        --yoko-secondary-hover-underline: var(--yoko-secondary-hover);
+        --yoko-secondary-focus: rgba(144, 158, 190, 0.25);
+        --yoko-secondary-inverse: #fff;
+        --yoko-contrast: #dfe3eb;
+        --yoko-contrast-background: #eff1f4;
+        --yoko-contrast-border: var(--yoko-contrast-background);
+        --yoko-contrast-underline: rgba(223, 227, 235, 0.5);
+        --yoko-contrast-hover: #fff;
+        --yoko-contrast-hover-background: #fff;
+        --yoko-contrast-hover-border: var(--yoko-contrast-hover-background);
+        --yoko-contrast-hover-underline: var(--yoko-contrast-hover);
+        --yoko-contrast-focus: rgba(207, 213, 226, 0.25);
+        --yoko-contrast-inverse: #000;
+        --yoko-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 9, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 9, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 9, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 9, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 9, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 9, 12, 0.06), 0 0 0 0.0625rem rgba(7, 9, 12, 0.015);
+        --yoko-h1-color: #f0f1f3;
+        --yoko-h2-color: #e0e3e7;
+        --yoko-h3-color: #c2c7d0;
+        --yoko-h4-color: #b3b9c5;
+        --yoko-h5-color: #a4acba;
+        --yoko-h6-color: #8891a4;
+        --yoko-mark-background-color: #014063;
+        --yoko-mark-color: #fff;
+        --yoko-ins-color: #62af9a;
+        --yoko-del-color: #ce7e7b;
+        --yoko-blockquote-border-color: var(--yoko-muted-border-color);
+        --yoko-blockquote-footer-color: var(--yoko-muted-color);
+        --yoko-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        --yoko-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        --yoko-table-border-color: var(--yoko-muted-border-color);
+        --yoko-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+        --yoko-code-background-color: #1a1f28;
+        --yoko-code-color: #8891a4;
+        --yoko-code-kbd-background-color: var(--yoko-color);
+        --yoko-code-kbd-color: var(--yoko-background-color);
+        --yoko-form-element-background-color: #1c212c;
+        --yoko-form-element-selected-background-color: #2a3140;
+        --yoko-form-element-border-color: #2a3140;
+        --yoko-form-element-color: #e0e3e7;
+        --yoko-form-element-placeholder-color: #8891a4;
+        --yoko-form-element-active-background-color: #1a1f28;
+        --yoko-form-element-active-border-color: var(--yoko-primary-border);
+        --yoko-form-element-focus-color: var(--yoko-primary-border);
+        --yoko-form-element-disabled-opacity: 0.5;
+        --yoko-form-element-invalid-border-color: #964a50;
+        --yoko-form-element-invalid-active-border-color: #b7403b;
+        --yoko-form-element-invalid-focus-color: var(--yoko-form-element-invalid-active-border-color);
+        --yoko-form-element-valid-border-color: #2a7b6f;
+        --yoko-form-element-valid-active-border-color: #16896a;
+        --yoko-form-element-valid-focus-color: var(--yoko-form-element-valid-active-border-color);
+        --yoko-switch-background-color: #333c4e;
+        --yoko-switch-checked-background-color: var(--yoko-primary-background);
+        --yoko-switch-color: #fff;
+        --yoko-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+        --yoko-range-border-color: #202632;
+        --yoko-range-active-border-color: #2a3140;
+        --yoko-range-thumb-border-color: var(--yoko-background-color);
+        --yoko-range-thumb-color: var(--yoko-secondary-background);
+        --yoko-range-thumb-active-color: var(--yoko-primary-background);
+        --yoko-accordion-border-color: var(--yoko-muted-border-color);
+        --yoko-accordion-active-summary-color: var(--yoko-primary-hover);
+        --yoko-accordion-close-summary-color: var(--yoko-color);
+        --yoko-accordion-open-summary-color: var(--yoko-muted-color);
+        --yoko-card-background-color: #181c25;
+        --yoko-card-border-color: var(--yoko-card-background-color);
+        --yoko-card-box-shadow: var(--yoko-box-shadow);
+        --yoko-card-sectioning-background-color: #1a1f28;
+        --yoko-loading-spinner-opacity: 0.5;
+        --yoko-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
+        --yoko-progress-background-color: #202632;
+        --yoko-progress-color: var(--yoko-primary-background);
+        --yoko-tooltip-background-color: var(--yoko-contrast-background);
+        --yoko-tooltip-color: var(--yoko-contrast-inverse);
+        --yoko-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        --yoko-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(150, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+        color-scheme: dark
+    }
+
+    :root:not([data-theme]) input:is([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[type=file]) {
+        --yoko-form-element-focus-color: var(--yoko-primary-focus)
+    }
+}
+
+[data-theme=dark] {
+    --yoko-background-color: #13171f;
+    --yoko-color: #c2c7d0;
+    --yoko-text-selection-color: rgba(199, 148, 0, 0.1875);
+    --yoko-muted-color: #7b8495;
+    --yoko-muted-border-color: #202632;
+    --yoko-primary: #c79400;
+    --yoko-primary-background: #ffbf00;
+    --yoko-primary-border: var(--yoko-primary-background);
+    --yoko-primary-underline: rgba(199, 148, 0, 0.5);
+    --yoko-primary-hover: #e8ae01;
+    --yoko-primary-hover-background: #fecc63;
+    --yoko-primary-hover-border: var(--yoko-primary-hover-background);
+    --yoko-primary-hover-underline: var(--yoko-primary-hover);
+    --yoko-primary-focus: rgba(199, 148, 0, 0.375);
+    --yoko-primary-inverse: #000;
+    --yoko-secondary: #969eaf;
+    --yoko-secondary-background: #525f7a;
+    --yoko-secondary-border: var(--yoko-secondary-background);
+    --yoko-secondary-underline: rgba(150, 158, 175, 0.5);
+    --yoko-secondary-hover: #b3b9c5;
+    --yoko-secondary-hover-background: #5d6b89;
+    --yoko-secondary-hover-border: var(--yoko-secondary-hover-background);
+    --yoko-secondary-hover-underline: var(--yoko-secondary-hover);
+    --yoko-secondary-focus: rgba(144, 158, 190, 0.25);
+    --yoko-secondary-inverse: #fff;
+    --yoko-contrast: #dfe3eb;
+    --yoko-contrast-background: #eff1f4;
+    --yoko-contrast-border: var(--yoko-contrast-background);
+    --yoko-contrast-underline: rgba(223, 227, 235, 0.5);
+    --yoko-contrast-hover: #fff;
+    --yoko-contrast-hover-background: #fff;
+    --yoko-contrast-hover-border: var(--yoko-contrast-hover-background);
+    --yoko-contrast-hover-underline: var(--yoko-contrast-hover);
+    --yoko-contrast-focus: rgba(207, 213, 226, 0.25);
+    --yoko-contrast-inverse: #000;
+    --yoko-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 9, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 9, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 9, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 9, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 9, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 9, 12, 0.06), 0 0 0 0.0625rem rgba(7, 9, 12, 0.015);
+    --yoko-h1-color: #f0f1f3;
+    --yoko-h2-color: #e0e3e7;
+    --yoko-h3-color: #c2c7d0;
+    --yoko-h4-color: #b3b9c5;
+    --yoko-h5-color: #a4acba;
+    --yoko-h6-color: #8891a4;
+    --yoko-mark-background-color: #014063;
+    --yoko-mark-color: #fff;
+    --yoko-ins-color: #62af9a;
+    --yoko-del-color: #ce7e7b;
+    --yoko-blockquote-border-color: var(--yoko-muted-border-color);
+    --yoko-blockquote-footer-color: var(--yoko-muted-color);
+    --yoko-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --yoko-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --yoko-table-border-color: var(--yoko-muted-border-color);
+    --yoko-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+    --yoko-code-background-color: #1a1f28;
+    --yoko-code-color: #8891a4;
+    --yoko-code-kbd-background-color: var(--yoko-color);
+    --yoko-code-kbd-color: var(--yoko-background-color);
+    --yoko-form-element-background-color: #1c212c;
+    --yoko-form-element-selected-background-color: #2a3140;
+    --yoko-form-element-border-color: #2a3140;
+    --yoko-form-element-color: #e0e3e7;
+    --yoko-form-element-placeholder-color: #8891a4;
+    --yoko-form-element-active-background-color: #1a1f28;
+    --yoko-form-element-active-border-color: var(--yoko-primary-border);
+    --yoko-form-element-focus-color: var(--yoko-primary-border);
+    --yoko-form-element-disabled-opacity: 0.5;
+    --yoko-form-element-invalid-border-color: #964a50;
+    --yoko-form-element-invalid-active-border-color: #b7403b;
+    --yoko-form-element-invalid-focus-color: var(--yoko-form-element-invalid-active-border-color);
+    --yoko-form-element-valid-border-color: #2a7b6f;
+    --yoko-form-element-valid-active-border-color: #16896a;
+    --yoko-form-element-valid-focus-color: var(--yoko-form-element-valid-active-border-color);
+    --yoko-switch-background-color: #333c4e;
+    --yoko-switch-checked-background-color: var(--yoko-primary-background);
+    --yoko-switch-color: #fff;
+    --yoko-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    --yoko-range-border-color: #202632;
+    --yoko-range-active-border-color: #2a3140;
+    --yoko-range-thumb-border-color: var(--yoko-background-color);
+    --yoko-range-thumb-color: var(--yoko-secondary-background);
+    --yoko-range-thumb-active-color: var(--yoko-primary-background);
+    --yoko-accordion-border-color: var(--yoko-muted-border-color);
+    --yoko-accordion-active-summary-color: var(--yoko-primary-hover);
+    --yoko-accordion-close-summary-color: var(--yoko-color);
+    --yoko-accordion-open-summary-color: var(--yoko-muted-color);
+    --yoko-card-background-color: #181c25;
+    --yoko-card-border-color: var(--yoko-card-background-color);
+    --yoko-card-box-shadow: var(--yoko-box-shadow);
+    --yoko-card-sectioning-background-color: #1a1f28;
+    --yoko-loading-spinner-opacity: 0.5;
+    --yoko-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
+    --yoko-progress-background-color: #202632;
+    --yoko-progress-color: var(--yoko-primary-background);
+    --yoko-tooltip-background-color: var(--yoko-contrast-background);
+    --yoko-tooltip-color: var(--yoko-contrast-inverse);
+    --yoko-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --yoko-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(150, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    color-scheme: dark
+}
+
+[data-theme=dark] input:is([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[type=file]) {
+    --yoko-form-element-focus-color: var(--yoko-primary-focus)
+}
+
+[type=checkbox], [type=radio], [type=range], progress {
+    accent-color: var(--yoko-primary)
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    background-repeat: no-repeat
+}
+
+::after, ::before {
+    text-decoration: inherit;
+    vertical-align: inherit
+}
+
+:where(:root) {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--yoko-background-color);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-font-weight);
+    font-size: var(--yoko-font-size);
+    line-height: var(--yoko-line-height);
+    font-family: var(--yoko-font-family);
+    text-underline-offset: var(--yoko-text-underline-offset);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4
+}
+
+body {
+    width: 100%;
+    margin: 0
+}
+
+main {
+    display: block
+}
+
+body > footer, body > header, body > main {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: var(--yoko-block-spacing-vertical) var(--yoko-block-spacing-horizontal)
+}
+
+section {
+    margin-bottom: var(--yoko-block-spacing-vertical)
+}
+
+b, strong {
+    font-weight: bolder
+}
+
+sub, sup {
+    position: relative;
+    font-size: .75em;
+    line-height: 0;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+address, blockquote, dl, ol, p, pre, table, ul {
+    margin-top: 0;
+    margin-bottom: var(--yoko-typography-spacing-vertical);
+    color: var(--yoko-color);
+    font-style: normal;
+    font-weight: var(--yoko-font-weight)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: var(--yoko-typography-spacing-vertical);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-font-weight);
+    font-size: var(--yoko-font-size);
+    line-height: var(--yoko-line-height);
+    font-family: var(--yoko-font-family)
+}
+
+h1 {
+    --yoko-color: var(--yoko-h1-color)
+}
+
+h2 {
+    --yoko-color: var(--yoko-h2-color)
+}
+
+h3 {
+    --yoko-color: var(--yoko-h3-color)
+}
+
+h4 {
+    --yoko-color: var(--yoko-h4-color)
+}
+
+h5 {
+    --yoko-color: var(--yoko-h5-color)
+}
+
+h6 {
+    --yoko-color: var(--yoko-h6-color)
+}
+
+:where(article,address,blockquote,dl,figure,form,ol,p,pre,table,ul) ~ :is(h1,h2,h3,h4,h5,h6) {
+    margin-top: var(--yoko-typography-spacing-top)
+}
+
+p {
+    margin-bottom: var(--yoko-typography-spacing-vertical)
+}
+
+hgroup {
+    margin-bottom: var(--yoko-typography-spacing-vertical)
+}
+
+hgroup > * {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+hgroup > :not(:first-child):last-child {
+    --yoko-color: var(--yoko-muted-color);
+    --yoko-font-weight: unset;
+    font-size: 1rem
+}
+
+:where(ol,ul) li {
+    margin-bottom: calc(var(--yoko-typography-spacing-vertical) * .25)
+}
+
+:where(dl,ol,ul) :where(dl,ol,ul) {
+    margin: 0;
+    margin-top: calc(var(--yoko-typography-spacing-vertical) * .25)
+}
+
+ul li {
+    list-style: square
+}
+
+mark {
+    padding: .125rem .25rem;
+    background-color: var(--yoko-mark-background-color);
+    color: var(--yoko-mark-color);
+    vertical-align: baseline
+}
+
+blockquote {
+    display: block;
+    margin: var(--yoko-typography-spacing-vertical) 0;
+    padding: var(--yoko-spacing);
+    border-right: none;
+    border-left: .25rem solid var(--yoko-blockquote-border-color);
+    border-inline-start: 0.25rem solid var(--yoko-blockquote-border-color);
+    border-inline-end: none
+}
+
+blockquote footer {
+    margin-top: calc(var(--yoko-typography-spacing-vertical) * .5);
+    color: var(--yoko-blockquote-footer-color)
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+    text-decoration: none;
+    cursor: help
+}
+
+ins {
+    color: var(--yoko-ins-color);
+    text-decoration: none
+}
+
+del {
+    color: var(--yoko-del-color)
+}
+
+::-moz-selection {
+    background-color: var(--yoko-text-selection-color)
+}
+
+::selection {
+    background-color: var(--yoko-text-selection-color)
+}
+
+:where(a:not([role=button])), [role=link] {
+    --yoko-color: var(--yoko-primary);
+    --yoko-background-color: transparent;
+    --yoko-underline: var(--yoko-primary-underline);
+    outline: 0;
+    background-color: var(--yoko-background-color);
+    color: var(--yoko-color);
+    -webkit-text-decoration: var(--yoko-text-decoration);
+    text-decoration: var(--yoko-text-decoration);
+    text-decoration-color: var(--yoko-underline);
+    text-underline-offset: 0.125em;
+    transition: background-color var(--yoko-transition), color var(--yoko-transition), box-shadow var(--yoko-transition), -webkit-text-decoration var(--yoko-transition);
+    transition: background-color var(--yoko-transition), color var(--yoko-transition), text-decoration var(--yoko-transition), box-shadow var(--yoko-transition);
+    transition: background-color var(--yoko-transition), color var(--yoko-transition), text-decoration var(--yoko-transition), box-shadow var(--yoko-transition), -webkit-text-decoration var(--yoko-transition)
+}
+
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]),:hover,:active,:focus), [role=link]:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+    --yoko-color: var(--yoko-primary-hover);
+    --yoko-underline: var(--yoko-primary-hover-underline);
+    --yoko-text-decoration: underline
+}
+
+:where(a:not([role=button])):focus-visible, [role=link]:focus-visible {
+    box-shadow: 0 0 0 var(--yoko-outline-width) var(--yoko-primary-focus)
+}
+
+a[role=button] {
+    display: inline-block
+}
+
+button {
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    text-transform: none
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button
+}
+
+[role=button], [type=button], [type=file]::file-selector-button, [type=reset], [type=submit], button {
+    --yoko-background-color: var(--yoko-primary-background);
+    --yoko-border-color: var(--yoko-primary-border);
+    --yoko-color: var(--yoko-primary-inverse);
+    --yoko-box-shadow: var(--yoko-button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    padding: var(--yoko-form-element-spacing-vertical) var(--yoko-form-element-spacing-horizontal);
+    border: var(--yoko-border-width) solid var(--yoko-border-color);
+    border-radius: var(--yoko-border-radius);
+    outline: 0;
+    background-color: var(--yoko-background-color);
+    box-shadow: var(--yoko-box-shadow);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-font-weight);
+    font-size: 1rem;
+    line-height: var(--yoko-line-height);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition: background-color var(--yoko-transition), border-color var(--yoko-transition), color var(--yoko-transition), box-shadow var(--yoko-transition)
+}
+
+[role=button]:is(:hover,:active,:focus), [role=button]:is([aria-current]:not([aria-current=false])), [type=button]:is(:hover,:active,:focus), [type=button]:is([aria-current]:not([aria-current=false])), [type=file]::file-selector-button:is(:hover,:active,:focus), [type=file]::file-selector-button:is([aria-current]:not([aria-current=false])), [type=reset]:is(:hover,:active,:focus), [type=reset]:is([aria-current]:not([aria-current=false])), [type=submit]:is(:hover,:active,:focus), [type=submit]:is([aria-current]:not([aria-current=false])), button:is(:hover,:active,:focus), button:is([aria-current]:not([aria-current=false])) {
+    --yoko-background-color: var(--yoko-primary-hover-background);
+    --yoko-border-color: var(--yoko-primary-hover-border);
+    --yoko-box-shadow: var(--yoko-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    --yoko-color: var(--yoko-primary-inverse)
+}
+
+[role=button]:focus, [role=button]:is([aria-current]:not([aria-current=false])):focus, [type=button]:focus, [type=button]:is([aria-current]:not([aria-current=false])):focus, [type=file]::file-selector-button:focus, [type=file]::file-selector-button:is([aria-current]:not([aria-current=false])):focus, [type=reset]:focus, [type=reset]:is([aria-current]:not([aria-current=false])):focus, [type=submit]:focus, [type=submit]:is([aria-current]:not([aria-current=false])):focus, button:focus, button:is([aria-current]:not([aria-current=false])):focus {
+    --yoko-box-shadow: var(--yoko-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--yoko-outline-width) var(--yoko-primary-focus)
+}
+
+[type=button], [type=reset], [type=submit] {
+    margin-bottom: var(--yoko-spacing)
+}
+
+[type=file]::file-selector-button, [type=reset] {
+    --yoko-background-color: var(--yoko-secondary-background);
+    --yoko-border-color: var(--yoko-secondary-border);
+    --yoko-color: var(--yoko-secondary-inverse);
+    cursor: pointer
+}
+
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false]),:hover,:active,:focus), [type=reset]:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+    --yoko-background-color: var(--yoko-secondary-hover-background);
+    --yoko-border-color: var(--yoko-secondary-hover-border);
+    --yoko-color: var(--yoko-secondary-inverse)
+}
+
+[type=file]::file-selector-button:focus, [type=reset]:focus {
+    --yoko-box-shadow: var(--yoko-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--yoko-outline-width) var(--yoko-secondary-focus)
+}
+
+:where(button,[type=submit],[type=reset],[type=button],[role=button])[disabled], :where(fieldset[disabled]) :is(button,[type=submit],[type=button],[type=reset],[role=button]) {
+    opacity: .5;
+    pointer-events: none
+}
+
+:where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0
+}
+
+td, th {
+    padding: calc(var(--yoko-spacing) / 2) var(--yoko-spacing);
+    border-bottom: var(--yoko-border-width) solid var(--yoko-table-border-color);
+    background-color: var(--yoko-background-color);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-font-weight);
+    text-align: left;
+    text-align: start
+}
+
+tfoot td, tfoot th {
+    border-top: var(--yoko-border-width) solid var(--yoko-table-border-color);
+    border-bottom: 0
+}
+
+table.striped tbody tr:nth-child(odd) td, table.striped tbody tr:nth-child(odd) th {
+    background-color: var(--yoko-table-row-stripped-background-color)
+}
+
+:where(audio,canvas,iframe,img,svg,video) {
+    vertical-align: middle
+}
+
+audio, video {
+    display: inline-block
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+:where(iframe) {
+    border-style: none
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-style: none
+}
+
+:where(svg:not([fill])) {
+    fill: currentColor
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+code, kbd, pre, samp {
+    font-size: .875em;
+    font-family: var(--yoko-font-family)
+}
+
+pre code {
+    font-size: inherit;
+    font-family: inherit
+}
+
+pre {
+    -ms-overflow-style: scrollbar;
+    overflow: auto
+}
+
+code, kbd, pre {
+    border-radius: var(--yoko-border-radius);
+    background: var(--yoko-code-background-color);
+    color: var(--yoko-code-color);
+    font-weight: var(--yoko-font-weight);
+    line-height: initial
+}
+
+code, kbd {
+    display: inline-block;
+    padding: .375rem
+}
+
+pre {
+    display: block;
+    margin-bottom: var(--yoko-spacing);
+    overflow-x: auto
+}
+
+pre > code {
+    display: block;
+    padding: var(--yoko-spacing);
+    background: 0 0;
+    line-height: var(--yoko-line-height)
+}
+
+kbd {
+    background-color: var(--yoko-code-kbd-background-color);
+    color: var(--yoko-code-kbd-color);
+    vertical-align: baseline
+}
+
+figure {
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+figure figcaption {
+    padding: calc(var(--yoko-spacing) * .5) 0;
+    color: var(--yoko-muted-color)
+}
+
+hr {
+    height: 0;
+    margin: var(--yoko-typography-spacing-vertical) 0;
+    border: 0;
+    border-top: 1px solid var(--yoko-muted-border-color);
+    color: inherit
+}
+
+[hidden], template {
+    display: none !important
+}
+
+canvas {
+    display: inline-block
+}
+
+input, optgroup, select, textarea {
+    margin: 0;
+    font-size: 1rem;
+    line-height: var(--yoko-line-height);
+    font-family: inherit;
+    letter-spacing: inherit
+}
+
+input {
+    overflow: visible
+}
+
+select {
+    text-transform: none
+}
+
+legend {
+    max-width: 100%;
+    padding: 0;
+    color: inherit;
+    white-space: normal
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox], [type=radio] {
+    padding: 0
+}
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border-style: none
+}
+
+:-moz-focusring {
+    outline: 0
+}
+
+:-moz-ui-invalid {
+    box-shadow: none
+}
+
+::-ms-expand {
+    display: none
+}
+
+[type=file], [type=range] {
+    padding: 0;
+    border-width: 0
+}
+
+input:not([type=checkbox],[type=radio],[type=range]) {
+    height: calc(1rem * var(--yoko-line-height) + var(--yoko-form-element-spacing-vertical) * 2 + var(--yoko-border-width) * 2)
+}
+
+fieldset {
+    width: 100%;
+    margin: 0;
+    margin-bottom: var(--yoko-spacing);
+    padding: 0;
+    border: 0
+}
+
+fieldset legend, label {
+    display: block;
+    margin-bottom: calc(var(--yoko-spacing) * .375);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-form-label-font-weight, var(--yoko-font-weight))
+}
+
+fieldset legend {
+    margin-bottom: calc(var(--yoko-spacing) * .5)
+}
+
+button[type=submit], input:not([type=checkbox],[type=radio]), select, textarea {
+    width: 100%
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file]), select, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: var(--yoko-form-element-spacing-vertical) var(--yoko-form-element-spacing-horizontal)
+}
+
+input, select, textarea {
+    --yoko-background-color: var(--yoko-form-element-background-color);
+    --yoko-border-color: var(--yoko-form-element-border-color);
+    --yoko-color: var(--yoko-form-element-color);
+    --yoko-box-shadow: none;
+    border: var(--yoko-border-width) solid var(--yoko-border-color);
+    border-radius: var(--yoko-border-radius);
+    outline: 0;
+    background-color: var(--yoko-background-color);
+    box-shadow: var(--yoko-box-shadow);
+    color: var(--yoko-color);
+    font-weight: var(--yoko-font-weight);
+    transition: background-color var(--yoko-transition), border-color var(--yoko-transition), color var(--yoko-transition), box-shadow var(--yoko-transition)
+}
+
+:where(select,textarea):not([readonly]):is(:active,:focus), input:not([type=submit],[type=button],[type=reset],[type=checkbox],[type=radio],[readonly]):is(:active,:focus) {
+    --yoko-background-color: var(--yoko-form-element-active-background-color)
+}
+
+:where(select,textarea):not([readonly]):is(:active,:focus), input:not([type=submit],[type=button],[type=reset],[role=switch],[readonly]):is(:active,:focus) {
+    --yoko-border-color: var(--yoko-form-element-active-border-color)
+}
+
+:where(select,textarea):not([readonly]):focus, input:not([type=submit],[type=button],[type=reset],[type=range],[type=file],[readonly]):focus {
+    --yoko-box-shadow: 0 0 0 var(--yoko-outline-width) var(--yoko-form-element-focus-color)
+}
+
+:where(fieldset[disabled]) :is(input:not([type=submit],[type=button],[type=reset]),select,textarea), input:not([type=submit],[type=button],[type=reset])[disabled], label[aria-disabled=true], select[disabled], textarea[disabled] {
+    opacity: var(--yoko-form-element-disabled-opacity);
+    pointer-events: none
+}
+
+label[aria-disabled=true] input[disabled] {
+    opacity: 1
+}
+
+:where(input,select,textarea):not([type=checkbox],[type=radio],[type=date],[type=datetime-local],[type=month],[type=time],[type=week],[type=range])[aria-invalid] {
+    padding-right: calc(var(--yoko-form-element-spacing-horizontal) + 1.5rem) !important;
+    padding-left: var(--yoko-form-element-spacing-horizontal);
+    padding-inline-start: var(--yoko-form-element-spacing-horizontal) !important;
+    padding-inline-end: calc(var(--yoko-form-element-spacing-horizontal) + 1.5rem) !important;
+    background-position: center right .75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat
+}
+
+:where(input,select,textarea):not([type=checkbox],[type=radio],[type=date],[type=datetime-local],[type=month],[type=time],[type=week],[type=range])[aria-invalid=false]:not(select) {
+    background-image: var(--yoko-icon-valid)
+}
+
+:where(input,select,textarea):not([type=checkbox],[type=radio],[type=date],[type=datetime-local],[type=month],[type=time],[type=week],[type=range])[aria-invalid=true]:not(select) {
+    background-image: var(--yoko-icon-invalid)
+}
+
+:where(input,select,textarea)[aria-invalid=false] {
+    --yoko-border-color: var(--yoko-form-element-valid-border-color)
+}
+
+:where(input,select,textarea)[aria-invalid=false]:is(:active,:focus) {
+    --yoko-border-color: var(--yoko-form-element-valid-active-border-color) !important
+}
+
+:where(input,select,textarea)[aria-invalid=false]:is(:active,:focus):not([type=checkbox],[type=radio]) {
+    --yoko-box-shadow: 0 0 0 var(--yoko-outline-width) var(--yoko-form-element-valid-focus-color) !important
+}
+
+:where(input,select,textarea)[aria-invalid=true] {
+    --yoko-border-color: var(--yoko-form-element-invalid-border-color)
+}
+
+:where(input,select,textarea)[aria-invalid=true]:is(:active,:focus) {
+    --yoko-border-color: var(--yoko-form-element-invalid-active-border-color) !important
+}
+
+:where(input,select,textarea)[aria-invalid=true]:is(:active,:focus):not([type=checkbox],[type=radio]) {
+    --yoko-box-shadow: 0 0 0 var(--yoko-outline-width) var(--yoko-form-element-invalid-focus-color) !important
+}
+
+[dir=rtl] :where(input,select,textarea):not([type=checkbox],[type=radio]):is([aria-invalid],[aria-invalid=true],[aria-invalid=false]) {
+    background-position: center left .75rem
+}
+
+input::-webkit-input-placeholder, input::placeholder, select:invalid, textarea::-webkit-input-placeholder, textarea::placeholder {
+    color: var(--yoko-form-element-placeholder-color);
+    opacity: 1
+}
+
+input:not([type=checkbox],[type=radio]), select, textarea {
+    margin-bottom: var(--yoko-spacing)
+}
+
+select::-ms-expand {
+    border: 0;
+    background-color: transparent
+}
+
+select:not([multiple],[size]) {
+    padding-right: calc(var(--yoko-form-element-spacing-horizontal) + 1.5rem);
+    padding-left: var(--yoko-form-element-spacing-horizontal);
+    padding-inline-start: var(--yoko-form-element-spacing-horizontal);
+    padding-inline-end: calc(var(--yoko-form-element-spacing-horizontal) + 1.5rem);
+    background-image: var(--yoko-icon-chevron);
+    background-position: center right .75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat
+}
+
+select[multiple] option:checked {
+    background: var(--yoko-form-element-selected-background-color);
+    color: var(--yoko-form-element-color)
+}
+
+[dir=rtl] select:not([multiple],[size]) {
+    background-position: center left .75rem
+}
+
+textarea {
+    display: block;
+    resize: vertical
+}
+
+textarea[aria-invalid] {
+    --yoko-icon-height: calc(1rem * var(--yoko-line-height) + var(--yoko-form-element-spacing-vertical) * 2 + var(--yoko-border-width) * 2);
+    background-position: top right .75rem !important;
+    background-size: 1rem var(--yoko-icon-height) !important
+}
+
+:where(input,select,textarea,fieldset) + small {
+    display: block;
+    width: 100%;
+    margin-top: calc(var(--yoko-spacing) * -.75);
+    margin-bottom: var(--yoko-spacing);
+    color: var(--yoko-muted-color)
+}
+
+:where(input,select,textarea,fieldset)[aria-invalid=false] + small {
+    color: var(--yoko-ins-color)
+}
+
+:where(input,select,textarea,fieldset)[aria-invalid=true] + small {
+    color: var(--yoko-del-color)
+}
+
+label > :where(input,select,textarea) {
+    margin-top: calc(var(--yoko-spacing) * .25)
+}
+
+label:has([type=checkbox],[type=radio]) {
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer
+}
+
+[type=checkbox], [type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: -.125em;
+    margin-inline-end: .5em;
+    border-width: var(--yoko-border-width);
+    vertical-align: middle;
+    cursor: pointer
+}
+
+[type=checkbox]::-ms-check, [type=radio]::-ms-check {
+    display: none
+}
+
+[type=checkbox]:checked, [type=checkbox]:checked:active, [type=checkbox]:checked:focus, [type=radio]:checked, [type=radio]:checked:active, [type=radio]:checked:focus {
+    --yoko-background-color: var(--yoko-primary-background);
+    --yoko-border-color: var(--yoko-primary-border);
+    background-image: var(--yoko-icon-checkbox);
+    background-position: center;
+    background-size: .75em auto;
+    background-repeat: no-repeat
+}
+
+[type=checkbox] ~ label, [type=radio] ~ label {
+    display: inline-block;
+    margin-bottom: 0;
+    cursor: pointer
+}
+
+[type=checkbox] ~ label:not(:last-of-type), [type=radio] ~ label:not(:last-of-type) {
+    margin-inline-end: 1em
+}
+
+[type=checkbox]:indeterminate {
+    --yoko-background-color: var(--yoko-primary-background);
+    --yoko-border-color: var(--yoko-primary-border);
+    background-image: var(--yoko-icon-minus);
+    background-position: center;
+    background-size: .75em auto;
+    background-repeat: no-repeat
+}
+
+[type=radio] {
+    border-radius: 50%
+}
+
+[type=radio]:checked, [type=radio]:checked:active, [type=radio]:checked:focus {
+    --yoko-background-color: var(--yoko-primary-inverse);
+    border-width: .35em;
+    background-image: none
+}
+
+[type=checkbox][role=switch] {
+    --yoko-background-color: var(--yoko-switch-background-color);
+    --yoko-color: var(--yoko-switch-color);
+    width: 2.25em;
+    height: 1.25em;
+    border: var(--yoko-border-width) solid var(--yoko-border-color);
+    border-radius: 1.25em;
+    background-color: var(--yoko-background-color);
+    line-height: 1.25em
+}
+
+[type=checkbox][role=switch]:not([aria-invalid]) {
+    --yoko-border-color: var(--yoko-switch-background-color)
+}
+
+[type=checkbox][role=switch]:before {
+    display: block;
+    aspect-ratio: 1;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--yoko-color);
+    box-shadow: var(--yoko-switch-thumb-box-shadow);
+    content: "";
+    transition: margin .1s ease-in-out
+}
+
+[type=checkbox][role=switch]:focus {
+    --yoko-background-color: var(--yoko-switch-background-color);
+    --yoko-border-color: var(--yoko-switch-background-color)
+}
+
+[type=checkbox][role=switch]:checked {
+    --yoko-background-color: var(--yoko-switch-checked-background-color);
+    --yoko-border-color: var(--yoko-switch-checked-background-color);
+    background-image: none
+}
+
+[type=checkbox][role=switch]:checked::before {
+    margin-inline-start: calc(2.25em - 1.25em)
+}
+
+[type=checkbox][role=switch][disabled] {
+    --yoko-background-color: var(--yoko-border-color)
+}
+
+[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus, [type=checkbox][role=switch][aria-invalid=false]:checked, [type=checkbox][role=switch][aria-invalid=false]:checked:active, [type=checkbox][role=switch][aria-invalid=false]:checked:focus {
+    --yoko-background-color: var(--yoko-form-element-valid-border-color)
+}
+
+[type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true], [type=checkbox]:checked[aria-invalid=true], [type=checkbox][role=switch]:checked:active[aria-invalid=true], [type=checkbox][role=switch]:checked:focus[aria-invalid=true], [type=checkbox][role=switch]:checked[aria-invalid=true] {
+    --yoko-background-color: var(--yoko-form-element-invalid-border-color)
+}
+
+[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus, [type=checkbox][role=switch][aria-invalid=false]:checked, [type=checkbox][role=switch][aria-invalid=false]:checked:active, [type=checkbox][role=switch][aria-invalid=false]:checked:focus, [type=radio][aria-invalid=false]:checked, [type=radio][aria-invalid=false]:checked:active, [type=radio][aria-invalid=false]:checked:focus {
+    --yoko-border-color: var(--yoko-form-element-valid-border-color)
+}
+
+[type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true], [type=checkbox]:checked[aria-invalid=true], [type=checkbox][role=switch]:checked:active[aria-invalid=true], [type=checkbox][role=switch]:checked:focus[aria-invalid=true], [type=checkbox][role=switch]:checked[aria-invalid=true], [type=radio]:checked:active[aria-invalid=true], [type=radio]:checked:focus[aria-invalid=true], [type=radio]:checked[aria-invalid=true] {
+    --yoko-border-color: var(--yoko-form-element-invalid-border-color)
+}
+
+[type=color]::-webkit-color-swatch-wrapper {
+    padding: 0
+}
+
+[type=color]::-moz-focus-inner {
+    padding: 0
+}
+
+[type=color]::-webkit-color-swatch {
+    border: 0;
+    border-radius: calc(var(--yoko-border-radius) * .5)
+}
+
+[type=color]::-moz-color-swatch {
+    border: 0;
+    border-radius: calc(var(--yoko-border-radius) * .5)
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file]):is([type=date],[type=datetime-local],[type=month],[type=time],[type=week]) {
+    --yoko-icon-position: 0.75rem;
+    --yoko-icon-width: 1rem;
+    padding-right: calc(var(--yoko-icon-width) + var(--yoko-icon-position));
+    background-image: var(--yoko-icon-date);
+    background-position: center right var(--yoko-icon-position);
+    background-size: var(--yoko-icon-width) auto;
+    background-repeat: no-repeat
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file])[type=time] {
+    background-image: var(--yoko-icon-time)
+}
+
+[type=date]::-webkit-calendar-picker-indicator, [type=datetime-local]::-webkit-calendar-picker-indicator, [type=month]::-webkit-calendar-picker-indicator, [type=time]::-webkit-calendar-picker-indicator, [type=week]::-webkit-calendar-picker-indicator {
+    width: var(--yoko-icon-width);
+    margin-right: calc(var(--yoko-icon-width) * -1);
+    margin-left: var(--yoko-icon-position);
+    opacity: 0
+}
+
+@-moz-document url-prefix() {
+    [type=date], [type=datetime-local], [type=month], [type=time], [type=week] {
+        padding-right: var(--yoko-form-element-spacing-horizontal) !important;
+        background-image: none !important
+    }
+}
+
+[dir=rtl] :is([type=date],[type=datetime-local],[type=month],[type=time],[type=week]) {
+    text-align: right
+}
+
+[type=file] {
+    --yoko-color: var(--yoko-muted-color);
+    margin-left: calc(var(--yoko-outline-width) * -1);
+    padding: calc(var(--yoko-form-element-spacing-vertical) * .5) 0;
+    padding-left: var(--yoko-outline-width);
+    border: 0;
+    border-radius: 0;
+    background: 0 0
+}
+
+[type=file]::file-selector-button {
+    margin-right: calc(var(--yoko-spacing) / 2);
+    padding: calc(var(--yoko-form-element-spacing-vertical) * .5) var(--yoko-form-element-spacing-horizontal)
+}
+
+[type=file]:is(:hover,:active,:focus)::file-selector-button {
+    --yoko-background-color: var(--yoko-secondary-hover-background);
+    --yoko-border-color: var(--yoko-secondary-hover-border)
+}
+
+[type=file]:focus::file-selector-button {
+    --yoko-box-shadow: var(--yoko-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--yoko-outline-width) var(--yoko-secondary-focus)
+}
+
+[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1.25rem;
+    background: 0 0
+}
+
+[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: .375rem;
+    border-radius: var(--yoko-border-radius);
+    background-color: var(--yoko-range-border-color);
+    -webkit-transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition);
+    transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition)
+}
+
+[type=range]::-moz-range-track {
+    width: 100%;
+    height: .375rem;
+    border-radius: var(--yoko-border-radius);
+    background-color: var(--yoko-range-border-color);
+    -moz-transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition);
+    transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition)
+}
+
+[type=range]::-ms-track {
+    width: 100%;
+    height: .375rem;
+    border-radius: var(--yoko-border-radius);
+    background-color: var(--yoko-range-border-color);
+    -ms-transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition);
+    transition: background-color var(--yoko-transition), box-shadow var(--yoko-transition)
+}
+
+[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -.4375rem;
+    border: 2px solid var(--yoko-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--yoko-range-thumb-color);
+    cursor: pointer;
+    -webkit-transition: background-color var(--yoko-transition), transform var(--yoko-transition);
+    transition: background-color var(--yoko-transition), transform var(--yoko-transition)
+}
+
+[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -.4375rem;
+    border: 2px solid var(--yoko-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--yoko-range-thumb-color);
+    cursor: pointer;
+    -moz-transition: background-color var(--yoko-transition), transform var(--yoko-transition);
+    transition: background-color var(--yoko-transition), transform var(--yoko-transition)
+}
+
+[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -.4375rem;
+    border: 2px solid var(--yoko-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--yoko-range-thumb-color);
+    cursor: pointer;
+    -ms-transition: background-color var(--yoko-transition), transform var(--yoko-transition);
+    transition: background-color var(--yoko-transition), transform var(--yoko-transition)
+}
+
+[type=range]:active, [type=range]:focus-within {
+    --yoko-range-border-color: var(--yoko-range-active-border-color);
+    --yoko-range-thumb-color: var(--yoko-range-thumb-active-color)
+}
+
+[type=range]:active::-webkit-slider-thumb {
+    transform: scale(1.25)
+}
+
+[type=range]:active::-moz-range-thumb {
+    transform: scale(1.25)
+}
+
+[type=range]:active::-ms-thumb {
+    transform: scale(1.25)
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file])[type=search] {
+    padding-inline-start: calc(var(--yoko-form-element-spacing-horizontal) + 1.75rem);
+    background-image: var(--yoko-icon-search);
+    background-position: center left calc(var(--yoko-form-element-spacing-horizontal) + .125rem);
+    background-size: 1rem auto;
+    background-repeat: no-repeat
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file])[type=search][aria-invalid] {
+    padding-inline-start: calc(var(--yoko-form-element-spacing-horizontal) + 1.75rem) !important;
+    background-position: center left 1.125rem, center right .75rem
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file])[type=search][aria-invalid=false] {
+    background-image: var(--yoko-icon-search), var(--yoko-icon-valid)
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file])[type=search][aria-invalid=true] {
+    background-image: var(--yoko-icon-search), var(--yoko-icon-invalid)
+}
+
+[dir=rtl] :where(input):not([type=checkbox],[type=radio],[type=range],[type=file])[type=search] {
+    background-position: center right 1.125rem
+}
+
+[dir=rtl] :where(input):not([type=checkbox],[type=radio],[type=range],[type=file])[type=search][aria-invalid] {
+    background-position: center right 1.125rem, center left .75rem
+}
+
+details {
+    display: block;
+    margin-bottom: var(--yoko-spacing)
+}
+
+details summary {
+    line-height: 1rem;
+    list-style-type: none;
+    cursor: pointer;
+    transition: color var(--yoko-transition)
+}
+
+details summary:not([role]) {
+    color: var(--yoko-accordion-close-summary-color)
+}
+
+details summary::-webkit-details-marker {
+    display: none
+}
+
+details summary::marker {
+    display: none
+}
+
+details summary::-moz-list-bullet {
+    list-style-type: none
+}
+
+details summary::after {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-inline-start: calc(var(--yoko-spacing, 1rem) * .5);
+    float: right;
+    transform: rotate(-90deg);
+    background-image: var(--yoko-icon-chevron);
+    background-position: right center;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform var(--yoko-transition)
+}
+
+details summary:focus {
+    outline: 0
+}
+
+details summary:focus:not([role]) {
+    color: var(--yoko-accordion-active-summary-color)
+}
+
+details summary:focus-visible:not([role]) {
+    outline: var(--yoko-outline-width) solid var(--yoko-primary-focus);
+    outline-offset: calc(var(--yoko-spacing, 1rem) * 0.5);
+    color: var(--yoko-primary)
+}
+
+details summary[role=button] {
+    width: 100%;
+    text-align: left
+}
+
+details summary[role=button]::after {
+    height: calc(1rem * var(--yoko-line-height, 1.5))
+}
+
+details[open] > summary {
+    margin-bottom: var(--yoko-spacing)
+}
+
+details[open] > summary:not([role]):not(:focus) {
+    color: var(--yoko-accordion-open-summary-color)
+}
+
+details[open] > summary::after {
+    transform: rotate(0)
+}
+
+[dir=rtl] details summary {
+    text-align: right
+}
+
+[dir=rtl] details summary::after {
+    float: left;
+    background-position: left center
+}
+
+article {
+    margin-bottom: var(--yoko-block-spacing-vertical);
+    padding: var(--yoko-block-spacing-vertical) var(--yoko-block-spacing-horizontal);
+    border-radius: var(--yoko-border-radius);
+    background: var(--yoko-card-background-color);
+    box-shadow: var(--yoko-card-box-shadow)
+}
+
+article > footer, article > header {
+    margin-right: calc(var(--yoko-block-spacing-horizontal) * -1);
+    margin-left: calc(var(--yoko-block-spacing-horizontal) * -1);
+    padding: calc(var(--yoko-block-spacing-vertical) * .66) var(--yoko-block-spacing-horizontal);
+    background-color: var(--yoko-card-sectioning-background-color)
+}
+
+article > header {
+    margin-top: calc(var(--yoko-block-spacing-vertical) * -1);
+    margin-bottom: var(--yoko-block-spacing-vertical);
+    border-bottom: var(--yoko-border-width) solid var(--yoko-card-border-color);
+    border-top-right-radius: var(--yoko-border-radius);
+    border-top-left-radius: var(--yoko-border-radius)
+}
+
+article > footer {
+    margin-top: var(--yoko-block-spacing-vertical);
+    margin-bottom: calc(var(--yoko-block-spacing-vertical) * -1);
+    border-top: var(--yoko-border-width) solid var(--yoko-card-border-color);
+    border-bottom-right-radius: var(--yoko-border-radius);
+    border-bottom-left-radius: var(--yoko-border-radius)
+}
+
+[role=group], [role=search] {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--yoko-spacing);
+    border-radius: var(--yoko-border-radius);
+    box-shadow: var(--yoko-group-box-shadow, 0 0 0 transparent);
+    vertical-align: middle;
+    transition: box-shadow var(--yoko-transition)
+}
+
+[role=group] input:not([type=checkbox],[type=radio]), [role=group] select, [role=group] > *, [role=search] input:not([type=checkbox],[type=radio]), [role=search] select, [role=search] > * {
+    position: relative;
+    flex: 1 1 auto;
+    margin-bottom: 0
+}
+
+[role=group] input:not([type=checkbox],[type=radio]):not(:first-child), [role=group] select:not(:first-child), [role=group] > :not(:first-child), [role=search] input:not([type=checkbox],[type=radio]):not(:first-child), [role=search] select:not(:first-child), [role=search] > :not(:first-child) {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+[role=group] input:not([type=checkbox],[type=radio]):not(:last-child), [role=group] select:not(:last-child), [role=group] > :not(:last-child), [role=search] input:not([type=checkbox],[type=radio]):not(:last-child), [role=search] select:not(:last-child), [role=search] > :not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+[role=group] input:not([type=checkbox],[type=radio]):focus, [role=group] select:focus, [role=group] > :focus, [role=search] input:not([type=checkbox],[type=radio]):focus, [role=search] select:focus, [role=search] > :focus {
+    z-index: 2
+}
+
+[role=group] [role=button]:not(:first-child), [role=group] [type=button]:not(:first-child), [role=group] [type=reset]:not(:first-child), [role=group] [type=submit]:not(:first-child), [role=group] button:not(:first-child), [role=group] input:not([type=checkbox],[type=radio]):not(:first-child), [role=group] select:not(:first-child), [role=search] [role=button]:not(:first-child), [role=search] [type=button]:not(:first-child), [role=search] [type=reset]:not(:first-child), [role=search] [type=submit]:not(:first-child), [role=search] button:not(:first-child), [role=search] input:not([type=checkbox],[type=radio]):not(:first-child), [role=search] select:not(:first-child) {
+    margin-left: calc(var(--yoko-border-width) * -1)
+}
+
+[role=group] [role=button], [role=group] [type=button], [role=group] [type=reset], [role=group] [type=submit], [role=group] button, [role=search] [role=button], [role=search] [type=button], [role=search] [type=reset], [role=search] [type=submit], [role=search] button {
+    width: auto
+}
+
+@supports selector(:has(*)) {
+    [role=group]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus), [role=search]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) {
+        --yoko-group-box-shadow: var(--yoko-group-box-shadow-focus-with-button)
+    }
+
+    [role=group]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) input:not([type=checkbox],[type=radio]), [role=group]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) select, [role=search]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) input:not([type=checkbox],[type=radio]), [role=search]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) select {
+        border-color: transparent
+    }
+
+    [role=group]:has(input:not([type=submit],[type=button]):focus,select:focus), [role=search]:has(input:not([type=submit],[type=button]):focus,select:focus) {
+        --yoko-group-box-shadow: var(--yoko-group-box-shadow-focus-with-input)
+    }
+
+    [role=group]:has(input:not([type=submit],[type=button]):focus,select:focus) [role=button], [role=group]:has(input:not([type=submit],[type=button]):focus,select:focus) [type=button], [role=group]:has(input:not([type=submit],[type=button]):focus,select:focus) [type=submit], [role=group]:has(input:not([type=submit],[type=button]):focus,select:focus) button, [role=search]:has(input:not([type=submit],[type=button]):focus,select:focus) [role=button], [role=search]:has(input:not([type=submit],[type=button]):focus,select:focus) [type=button], [role=search]:has(input:not([type=submit],[type=button]):focus,select:focus) [type=submit], [role=search]:has(input:not([type=submit],[type=button]):focus,select:focus) button {
+        --yoko-button-box-shadow: 0 0 0 var(--yoko-border-width) var(--yoko-primary-border);
+        --yoko-button-hover-box-shadow: 0 0 0 var(--yoko-border-width) var(--yoko-primary-hover-border)
+    }
+
+    [role=group] [role=button]:focus, [role=group] [type=button]:focus, [role=group] [type=reset]:focus, [role=group] [type=submit]:focus, [role=group] button:focus, [role=search] [role=button]:focus, [role=search] [type=button]:focus, [role=search] [type=reset]:focus, [role=search] [type=submit]:focus, [role=search] button:focus {
+        box-shadow: none
+    }
+}
+
+[role=search] > :first-child {
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem
+}
+
+[role=search] > :last-child {
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem
+}
+
+[aria-busy=true]:not(input,select,textarea,html) {
+    white-space: nowrap
+}
+
+[aria-busy=true]:not(input,select,textarea,html)::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: var(--yoko-icon-loading);
+    background-size: 1em auto;
+    background-repeat: no-repeat;
+    content: "";
+    vertical-align: -.125em
+}
+
+[aria-busy=true]:not(input,select,textarea,html):not(:empty)::before {
+    margin-inline-end: calc(var(--yoko-spacing) * .5)
+}
+
+[aria-busy=true]:not(input,select,textarea,html):empty {
+    text-align: center
+}
+
+[role=button][aria-busy=true], [type=button][aria-busy=true], [type=reset][aria-busy=true], [type=submit][aria-busy=true], a[aria-busy=true], button[aria-busy=true] {
+    pointer-events: none
+}
+
+:root {
+    --yoko-scrollbar-width: 0px
+}
+
+dialog {
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    min-width: 100%;
+    height: inherit;
+    min-height: 100%;
+    padding: 0;
+    border: 0;
+    -webkit-backdrop-filter: var(--yoko-modal-overlay-backdrop-filter);
+    backdrop-filter: var(--yoko-modal-overlay-backdrop-filter);
+    background-color: var(--yoko-modal-overlay-background-color);
+    color: var(--yoko-color)
+}
+
+dialog article {
+    width: 100%;
+    max-height: calc(100vh - var(--yoko-spacing) * 2);
+    margin: var(--yoko-spacing);
+    overflow: auto
+}
+
+@media (min-width: 576px) {
+    dialog article {
+        max-width: 510px
+    }
+}
+
+@media (min-width: 768px) {
+    dialog article {
+        max-width: 700px
+    }
+}
+
+dialog article > header > * {
+    margin-bottom: 0
+}
+
+dialog article > header :is(a,button)[rel=prev] {
+    margin: 0;
+    margin-left: var(--yoko-spacing);
+    padding: 0;
+    float: right
+}
+
+dialog article > footer {
+    text-align: right
+}
+
+dialog article > footer [role=button], dialog article > footer button {
+    margin-bottom: 0
+}
+
+dialog article > footer [role=button]:not(:first-of-type), dialog article > footer button:not(:first-of-type) {
+    margin-left: calc(var(--yoko-spacing) * .5)
+}
+
+dialog article :is(a,button)[rel=prev] {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-top: calc(var(--yoko-spacing) * -1);
+    margin-bottom: var(--yoko-spacing);
+    margin-left: auto;
+    border: none;
+    background-image: var(--yoko-icon-close);
+    background-position: center;
+    background-size: auto 1rem;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    opacity: .5;
+    transition: opacity var(--yoko-transition)
+}
+
+dialog article :is(a,button)[rel=prev]:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+    opacity: 1
+}
+
+dialog:not([open]), dialog[open=false] {
+    display: none
+}
+
+:where(nav li)::before {
+    float: left;
+    content: "​"
+}
+
+nav, nav ul {
+    display: flex
+}
+
+nav {
+    justify-content: space-between;
+    overflow: visible
+}
+
+nav ol, nav ul {
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none
+}
+
+nav ol:first-of-type, nav ul:first-of-type {
+    margin-left: calc(var(--yoko-nav-element-spacing-horizontal) * -1)
+}
+
+nav ol:last-of-type, nav ul:last-of-type {
+    margin-right: calc(var(--yoko-nav-element-spacing-horizontal) * -1)
+}
+
+nav li {
+    display: inline-block;
+    margin: 0;
+    padding: var(--yoko-nav-element-spacing-vertical) var(--yoko-nav-element-spacing-horizontal)
+}
+
+nav li :where(a,[role=link]) {
+    display: inline-block;
+    margin: calc(var(--yoko-nav-link-spacing-vertical) * -1) calc(var(--yoko-nav-link-spacing-horizontal) * -1);
+    padding: var(--yoko-nav-link-spacing-vertical) var(--yoko-nav-link-spacing-horizontal);
+    border-radius: var(--yoko-border-radius)
+}
+
+nav li :where(a,[role=link]):not(:hover) {
+    text-decoration: none
+}
+
+nav li [role=button], nav li [type=button], nav li button, nav li input:not([type=checkbox],[type=radio],[type=range],[type=file]), nav li select {
+    height: auto;
+    margin-right: inherit;
+    margin-bottom: 0;
+    margin-left: inherit;
+    padding: calc(var(--yoko-nav-link-spacing-vertical) - var(--yoko-border-width) * 2) var(--yoko-nav-link-spacing-horizontal)
+}
+
+nav[aria-label=breadcrumb] {
+    align-items: center;
+    justify-content: start
+}
+
+nav[aria-label=breadcrumb] ul li:not(:first-child) {
+    margin-inline-start: var(--yoko-nav-link-spacing-horizontal)
+}
+
+nav[aria-label=breadcrumb] ul li a {
+    margin: calc(var(--yoko-nav-link-spacing-vertical) * -1) 0;
+    margin-inline-start: calc(var(--yoko-nav-link-spacing-horizontal) * -1)
+}
+
+nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
+    display: inline-block;
+    position: absolute;
+    width: calc(var(--yoko-nav-link-spacing-horizontal) * 4);
+    margin: 0 calc(var(--yoko-nav-link-spacing-horizontal) * -1);
+    content: var(--yoko-nav-breadcrumb-divider);
+    color: var(--yoko-muted-color);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap
+}
+
+nav[aria-label=breadcrumb] a[aria-current]:not([aria-current=false]) {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none
+}
+
+aside li, aside nav, aside ol, aside ul {
+    display: block
+}
+
+aside li {
+    padding: calc(var(--yoko-nav-element-spacing-vertical) * .5) var(--yoko-nav-element-spacing-horizontal)
+}
+
+aside li a {
+    display: block
+}
+
+aside li [role=button] {
+    margin: inherit
+}
+
+[dir=rtl] nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+    content: "\\"
+}
+
+progress {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    appearance: none;
+    width: 100%;
+    height: .5rem;
+    margin-bottom: calc(var(--yoko-spacing) * .5);
+    overflow: hidden;
+    border: 0;
+    border-radius: var(--yoko-border-radius);
+    background-color: var(--yoko-progress-background-color);
+    color: var(--yoko-progress-color)
+}
+
+progress::-webkit-progress-bar {
+    border-radius: var(--yoko-border-radius);
+    background: 0 0
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: var(--yoko-progress-color);
+    -webkit-transition: inline-size var(--yoko-transition);
+    transition: inline-size var(--yoko-transition)
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--yoko-progress-color)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    progress:indeterminate {
+        background: var(--yoko-progress-background-color) linear-gradient(to right, var(--yoko-progress-color) 30%, var(--yoko-progress-background-color) 30%) top left/150% 150% no-repeat;
+        animation: progress-indeterminate 1s linear infinite
+    }
+
+    progress:indeterminate[value]::-webkit-progress-value {
+        background-color: transparent
+    }
+
+    progress:indeterminate::-moz-progress-bar {
+        background-color: transparent
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    [dir=rtl] progress:indeterminate {
+        animation-direction: reverse
+    }
+}
+
+@keyframes progress-indeterminate {
+    0% {
+        background-position: 200% 0
+    }
+    100% {
+        background-position: -200% 0
+    }
+}
+
+[data-tooltip] {
+    position: relative
+}
+
+[data-tooltip]:not(a,button,input) {
+    border-bottom: 1px dotted;
+    text-decoration: none;
+    cursor: help
+}
+
+[data-tooltip]::after, [data-tooltip]::before, [data-tooltip][data-placement=top]::after, [data-tooltip][data-placement=top]::before {
+    display: block;
+    z-index: 99;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    padding: .25rem .5rem;
+    overflow: hidden;
+    transform: translate(-50%, -.25rem);
+    border-radius: var(--yoko-border-radius);
+    background: var(--yoko-tooltip-background-color);
+    content: attr(data-tooltip);
+    color: var(--yoko-tooltip-color);
+    font-style: normal;
+    font-weight: var(--yoko-font-weight);
+    font-size: .875rem;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none
+}
+
+[data-tooltip]::after, [data-tooltip][data-placement=top]::after {
+    padding: 0;
+    transform: translate(-50%, 0);
+    border-top: .3rem solid;
+    border-right: .3rem solid transparent;
+    border-left: .3rem solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+    content: "";
+    color: var(--yoko-tooltip-background-color)
+}
+
+[data-tooltip][data-placement=bottom]::after, [data-tooltip][data-placement=bottom]::before {
+    top: 100%;
+    bottom: auto;
+    transform: translate(-50%, .25rem)
+}
+
+[data-tooltip][data-placement=bottom]:after {
+    transform: translate(-50%, -.3rem);
+    border: .3rem solid transparent;
+    border-bottom: .3rem solid
+}
+
+[data-tooltip][data-placement=left]::after, [data-tooltip][data-placement=left]::before {
+    top: 50%;
+    right: 100%;
+    bottom: auto;
+    left: auto;
+    transform: translate(-.25rem, -50%)
+}
+
+[data-tooltip][data-placement=left]:after {
+    transform: translate(.3rem, -50%);
+    border: .3rem solid transparent;
+    border-left: .3rem solid
+}
+
+[data-tooltip][data-placement=right]::after, [data-tooltip][data-placement=right]::before {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 100%;
+    transform: translate(.25rem, -50%)
+}
+
+[data-tooltip][data-placement=right]:after {
+    transform: translate(-.3rem, -50%);
+    border: .3rem solid transparent;
+    border-right: .3rem solid
+}
+
+[data-tooltip]:focus::after, [data-tooltip]:focus::before, [data-tooltip]:hover::after, [data-tooltip]:hover::before {
+    opacity: 1
+}
+
+@media (hover: hover) and (pointer: fine) {
+    [data-tooltip]:focus::after, [data-tooltip]:focus::before, [data-tooltip]:hover::after, [data-tooltip]:hover::before {
+        --yoko-tooltip-slide-to: translate(-50%, -0.25rem);
+        transform: translate(-50%, .75rem);
+        animation-duration: .2s;
+        animation-fill-mode: forwards;
+        animation-name: tooltip-slide;
+        opacity: 0
+    }
+
+    [data-tooltip]:focus::after, [data-tooltip]:hover::after {
+        --yoko-tooltip-caret-slide-to: translate(-50%, 0rem);
+        transform: translate(-50%, -.25rem);
+        animation-name: tooltip-caret-slide
+    }
+
+    [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:hover::after, [data-tooltip][data-placement=bottom]:hover::before {
+        --yoko-tooltip-slide-to: translate(-50%, 0.25rem);
+        transform: translate(-50%, -.75rem);
+        animation-name: tooltip-slide
+    }
+
+    [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::after {
+        --yoko-tooltip-caret-slide-to: translate(-50%, -0.3rem);
+        transform: translate(-50%, -.5rem);
+        animation-name: tooltip-caret-slide
+    }
+
+    [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:focus::before, [data-tooltip][data-placement=left]:hover::after, [data-tooltip][data-placement=left]:hover::before {
+        --yoko-tooltip-slide-to: translate(-0.25rem, -50%);
+        transform: translate(.75rem, -50%);
+        animation-name: tooltip-slide
+    }
+
+    [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::after {
+        --yoko-tooltip-caret-slide-to: translate(0.3rem, -50%);
+        transform: translate(.05rem, -50%);
+        animation-name: tooltip-caret-slide
+    }
+
+    [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:focus::before, [data-tooltip][data-placement=right]:hover::after, [data-tooltip][data-placement=right]:hover::before {
+        --yoko-tooltip-slide-to: translate(0.25rem, -50%);
+        transform: translate(-.75rem, -50%);
+        animation-name: tooltip-slide
+    }
+
+    [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::after {
+        --yoko-tooltip-caret-slide-to: translate(-0.3rem, -50%);
+        transform: translate(-.05rem, -50%);
+        animation-name: tooltip-caret-slide
+    }
+}
+
+@keyframes tooltip-slide {
+    to {
+        transform: var(--yoko-tooltip-slide-to);
+        opacity: 1
+    }
+}
+
+@keyframes tooltip-caret-slide {
+    50% {
+        opacity: 0
+    }
+    to {
+        transform: var(--yoko-tooltip-caret-slide-to);
+        opacity: 1
+    }
+}
+
+[aria-controls] {
+    cursor: pointer
+}
+
+[aria-disabled=true], [disabled] {
+    cursor: not-allowed
+}
+
+[aria-hidden=false][hidden] {
+    display: initial
+}
+
+[aria-hidden=false][hidden]:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute
+}
+
+[tabindex], a, area, button, input, label, select, summary, textarea {
+    -ms-touch-action: manipulation
+}
+
+[dir=rtl] {
+    direction: rtl
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :not([aria-busy=true]), :not([aria-busy=true])::after, :not([aria-busy=true])::before {
+        background-attachment: initial !important;
+        animation-duration: 1ms !important;
+        animation-delay: -1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important
+    }
+}

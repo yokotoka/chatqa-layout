@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Parser</title>
+    <link rel="stylesheet" href="./base.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 1rem;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        header {
+            grid-area: header;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        aside {
+            grid-area: sidebar;
+            padding-top: 1em !important;
+        }
+
+        main {
+            grid-area: content;
+            padding: 1rem;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .thread {
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
+        }
+
+        .reactions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .comment-form {
+            grid-area: comments;
+            margin-top: 2rem;
+        }
+
+        .answers {
+            padding-left: 2rem;
+            padding-top: 0.5rem;
+        }
+
+        .question {
+            padding-left: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        aside h2 {
+            padding-left: 1rem;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .logo {
+            font-family: 'Cursive', sans-serif;
+            font-size: 2rem;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-areas:
+                    "header"
+                    "content"
+                    "comments"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto;
+            }
+
+            .comment-form {
+                grid-area: comments;
+            }
+
+            aside {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="logo">ChatQA</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+</header>
+<aside>
+    <h2>Popular Q/A Threads</h2>
+    <ul>
+        <li><a href="#thread1">How to handle emojis in chat messages?</a></li>
+        <li><a href="#thread2">Best practices for storing chat logs</a></li>
+        <li><a href="#thread3">How to analyze sentiment in chat messages?</a></li>
+        <li><a href="#thread4">Integrating chat parsing with machine learning</a></li>
+        <li><a href="#thread5">Scaling chat parsing for large datasets</a></li>
+    </ul>
+</aside>
+<main>
+    <article class="thread">
+        <div class="question">
+            <h2>How to parse chat messages?</h2>
+        </div>
+        <div class="answers">
+            <p>You can use Python's regular expressions to parse chat messages...</p>
+            <img src="https://picsum.photos/200/300" alt="Random Image">
+            <div class="reactions">
+                <span>👍 10</span>
+                <span>❤️ 5</span>
+                <span>😂 2</span>
+            </div>
+            <div class="answers">
+                <p>Alternatively, using a library like spaCy can make the process easier...</p>
+                <div class="reactions">
+                    <span>👍 8</span>
+                    <span>❤️ 3</span>
+                    <span>😂 1</span>
+                </div>
+                <div class="answers">
+                    <p>Another approach is to use machine learning techniques to classify and parse messages...</p>
+                    <img src="https://picsum.photos/250/300" alt="Random Image">
+                    <div class="reactions">
+                        <span>👍 12</span>
+                        <span>❤️ 6</span>
+                        <span>😂 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="answers">
+            <p>NLTK and spaCy are great libraries for natural language processing...</p>
+            <div class="reactions">
+                <span>👍 15</span>
+                <span>❤️ 7</span>
+                <span>😂 4</span>
+            </div>
+            <div class="answers">
+                <p>Regex is useful for simple parsing tasks...</p>
+                <img src="https://picsum.photos/300/300" alt="Random Image">
+                <div class="reactions">
+                    <span>👍 10</span>
+                    <span>❤️ 5</span>
+                    <span>😂 2</span>
+                </div>
+                <div class="answers">
+                    <p>For more complex parsing, consider using machine learning models...</p>
+                    <div class="reactions">
+                        <span>👍 12</span>
+                        <span>❤️ 6</span>
+                        <span>😂 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="answers">
+            <p>The emoji library in Python is very helpful for handling emojis...</p>
+            <div class="reactions">
+                <span>👍 20</span>
+                <span>❤️ 10</span>
+                <span>😂 5</span>
+            </div>
+            <div class="answers">
+                <p>Regular expressions can also be used to detect emojis...</p>
+                <div class="reactions">
+                    <span>👍 8</span>
+                    <span>❤️ 3</span>
+                    <span>😂 1</span>
+                </div>
+                <div class="answers">
+                    <p>For more advanced usage, consider using a Unicode-aware library...</p>
+                    <img src="https://picsum.photos/350/300" alt="Random Image">
+                    <div class="reactions">
+                        <span>👍 12</span>
+                        <span>❤️ 6</span>
+                        <span>😂 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="comment-form">
+        <h3>Leave a Comment</h3>
+        <form action="#" method="post">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Chat Parser. All rights reserved.</p>
+</footer>
+</body>
+</html>
